@@ -10,4 +10,5 @@ const Home = () => (
   </>
 )
 
+<HEAD
 export default Home;
