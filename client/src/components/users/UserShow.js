@@ -31,6 +31,9 @@ const UserShow = ({ id, email, password, updateUser, deleteUser }) => {
           <button onClick={() => deleteUser(id)}>
             Delete
           </button>
+          <Link to={`/${id}/trips`}>
+            <button>Trips</button>
+          </Link>
         </>
       }
     </>
