@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const AddressForm = ({ addAddress, id, street, state, city, county, region, zip, updateAddress, setEdit }) => {
-  const [address, setAddress] = useState({ street: '', state: '', city: '', county: '', region: '', zip: NaN })
+  const [address, setAddress] = useState({ street: '', state: '', city: '', county: '', region: '', zip: '' })
 
   useEffect( () => {
     if (id) {
-      setAddress({ street: '', state: '', city: '', county: '', region: '', zip: NaN })
+      setAddress({ street: '', state: '', city: '', county: '', region: '', zip: '' })
     }
   }, [])
 
@@ -17,7 +17,7 @@ const AddressForm = ({ addAddress, id, street, state, city, county, region, zip,
     } else {
       addAddress(address)
     }
-    setAddress({ street: '', state: '', city: '', county: '', region: '', zip: NaN })
+    setAddress({ street: '', state: '', city: '', county: '', region: '', zip: '' })
   }
 
   return(
