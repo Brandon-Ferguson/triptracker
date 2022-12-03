@@ -11,4 +11,3 @@ const Home = () => (
 )
 
 export default Home;
-# donde esta la bilioteca

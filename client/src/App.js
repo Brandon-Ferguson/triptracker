@@ -7,6 +7,7 @@ import Users from './components/users/Users';
 
 const App = () => (
   <>
+    <MainNavbar />
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
