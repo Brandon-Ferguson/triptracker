@@ -5,6 +5,7 @@ import Nomatch from './components/shared/Nomatch';
 import MainNavbar from './components/shared/MainNavbar';
 import Users from './components/users/Users';
 import Trips from './components/trips/Trips'
+import Locations from './components/locations/Locations'
 
 const App = () => (
   <>
@@ -14,6 +15,7 @@ const App = () => (
       <Route path='/about' element={<About />} />
       <Route path='/users' element={<Users />} />
       <Route path='/:user_ID/trips' element={<Trips />} />
+      <Route path='/:trip_ID/locations' element={<Locations />} />
       <Route path='/*' element={<Nomatch />} />
     </Routes>
   </>

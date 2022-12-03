@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import TripForm from './TripForm'; 
-import { Link } from 'react-router-dom';
+import LocationForm from './LocationForm'; 
 
-const TripShow = ({ id, name, updateTrip, deleteTrip }) => {
+const LocationShow = ({ id, loc_name, updateLocation, deleteLocation }) => {
   const [editing, setEdit] = useState(false)
   
   return (
@@ -10,10 +9,10 @@ const TripShow = ({ id, name, updateTrip, deleteTrip }) => {
       {
         editing ?
         <>
-          <TripForm 
+          <LocationForm 
             id={id}
-            name={name}
-            updateTrip={updateTrip}
+            loc_name={loc_name}
+            updateLocation={updateLocation}
             setEdit={setEdit}
           />
           <button onClick={() => setEdit(false)}> 
@@ -22,20 +21,18 @@ const TripShow = ({ id, name, updateTrip, deleteTrip }) => {
         </>
         :
         <>
-          <h2>{name}</h2>
+          <h2>{loc_name}</h2>
           <button onClick={() => setEdit(true)}>
             Edit
           </button>
-          <button onClick={() => deleteTrip(id)}>
+          <button onClick={() => deleteLocation(id)}>
             Delete
           </button>
-          <Link to={`/${id}/locations`}>
-            <button>Locations</button>
-          </Link>
+          <button>Addresses EDIT ME LATER </button>
         </>
       }    
     </>
   )
 }
 
-export default TripShow;
+export default LocationShow;
