@@ -1,44 +1,44 @@
 class Api::UsersController < ApplicationController
-  before_action :set_list, only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   
   def index
-    render json: List.all
+    render json: User.all
   end
   
   def show
-    render json: @list
+    render json: @user
   end
   
   def create
-    @list = List.new(list_params)
-    if @list.save
-      render json: @list
+    @user = User.new(user_params)
+    if @user.save
+      render json: @user
     else
-      render json: { errors: @list.errors }, status: :unprocessable_entity
+      render json: { errors: @user.errors }, status: :unprocessable_entity
     end
   end
   
   def update
-    if @list.update(list_params)
-      render json: @list
+    if @user.update(user_params)
+      render json: @user
     else
-      render json: { errors: @list.errors }, status: :unprocessable_entity
+      render json: { errors: @user.errors }, status: :unprocessable_entity
     end
   end
   
   def destroy
-    @list.destroy 
-    render json: { message: 'List deleted '}
+    @user.destroy 
+    render json: { message: 'User deleted '}
   end
   
   private
   
-    def list_params
-      params.require(:list).permit(:list_name, :desc)
+    def user_params
+      params.require(:user).permit(:email, :password)
     end
   
-    def set_list
-      @list = List.find(params[:id])
+    def set_user
+      @user = User.find(params[:id])
     end
   
 end
