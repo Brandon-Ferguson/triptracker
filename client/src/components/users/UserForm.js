@@ -12,7 +12,7 @@ const UserForm = ({ addUser, id, email, password, updateUser, setEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateUser(id, email)
+      updateUser(id, user)
       setEdit(false)
     } else {
       addUser(user)
