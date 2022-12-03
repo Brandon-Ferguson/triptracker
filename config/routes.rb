@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     resources :trips, except: [:index, :show, :create, :update, :destroy] do
       resources :locations
     end
+
+    resources :locations, except: [:index, :show, :create, :update, :destroy] do
+      resources :addresses
+    end
   end
 end

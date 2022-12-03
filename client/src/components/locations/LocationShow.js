@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import LocationForm from './LocationForm'; 
+import { Link } from 'react-router-dom';
 
 const LocationShow = ({ id, loc_name, updateLocation, deleteLocation }) => {
   const [editing, setEdit] = useState(false)
@@ -28,7 +29,9 @@ const LocationShow = ({ id, loc_name, updateLocation, deleteLocation }) => {
           <button onClick={() => deleteLocation(id)}>
             Delete
           </button>
-          <button>Addresses EDIT ME LATER </button>
+          <Link to={`/${id}/addresses`}>
+            <button>Addresses</button>
+          </Link>
         </>
       }    
     </>

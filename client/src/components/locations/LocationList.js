@@ -13,4 +13,4 @@ const LocationList = ({ locations, updateLocation, deleteLocation }) => (
   </>
 ) 
 
-export default LocationList;
+export default LocationList; 
